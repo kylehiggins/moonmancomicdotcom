@@ -1,0 +1,710 @@
+/* =RESETS
+-------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+html { -moz-text-size-adjust: none; -webkit-text-size-adjust: none; text-size-adjust: none; }
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd { margin-block-end: 0; }
+
+body { line-height: 1.5; min-height: 100vh; padding: 0; }
+
+h1, h2, h3, h4 { line-height: 1.1; text-wrap: balance; }
+
+ul, ol { list-style: none; }
+
+img, picture { max-width: 100%; display: block; }
+
+/* =GENERAL
+-------------------------------------- */
+
+/*@font-face {
+	font-family: 'Inter';
+	src: url('assets/Inter.var.woff2') format('woff2 supports variations'), url('assets/Inter.var.woff2') format('woff2-variations');
+	font-weight: 100 1000;
+}*/
+
+@font-face {
+  font-family: 'InterVariable';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("InterVariable.woff2") format("woff2");
+}
+@font-face {
+  font-family: 'InterVariable';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("InterVariable-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("RobotoMono-VariableFont_wght.ttf") format("woff2");
+}
+
+:root {
+    --color-highlight: #f05222;
+    --color-grey-light: #808283;
+    --color-grey-dark: #414446;
+    --color-grey-darkest: #2c2f31;
+    --font-weight-light: 300;
+    --font-weight-medium: 600;
+    --font-weight-bold: 900;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'InterVariable', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+a {
+    border-bottom: 1px solid var(--color-grey-light);
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+a:active {
+    border-bottom: 1px solid var(--color-grey-light);
+    color: var(--color-grey-light);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 10vw, 5rem); /* clamp version */
+    font-size: 48px;
+    line-height: 64px;
+}
+
+h1 span { font-weight: var(--font-weight-bold); }
+
+h2, h3, h4 {
+    color: var(--color-highlight);
+    font-family: 'Roboto Mono';
+    font-size: 22px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+h2 span {
+    color: var(--color-grey-dark);
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    text-align: right;
+    text-transform: lowercase;
+    width: 100%;
+}
+
+h3 { color: #fff; }
+
+h4 {
+    border-top: 2px solid var(--color-highlight);
+    display: flex;
+    font-size: 16px;
+    line-height: 1;
+    padding-top: 12px;
+    margin-bottom: 40px;
+}
+
+h4 span.title-sub {
+    color: var(--color-grey-dark);
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    text-align: right;
+    padding-left: 8px;
+    text-transform: lowercase;
+}
+
+h5 {
+    font-family: 'Roboto Mono';
+    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    font-size: 20px;
+    margin: 0;
+}
+
+h6 {
+    color: var(--color-grey-light);
+    font-family: 'Roboto Mono';
+    font-size: 20px;
+    font-weight: var(--font-weight-light);
+    font-size: 20px;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+/*@media screen and (max-width: 500px) {
+    h5, h6 { font-size: 16px; }
+}*/
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+p { margin-bottom: 32px; }
+
+/* =COLLAB BANNER
+-------------------------------------- */
+
+#collab-banner {
+    background-color: var(--color-highlight);
+    font-size: 10px;
+    margin: 0 auto;
+    padding: 12px 0;
+    width: 100%;
+}
+
+#collab-banner a { border-width: 0; }
+#collab-banner a:hover, 
+#collab-banner a:active,
+#collab-banner a:focus { color: #000; } 
+
+#collab-banner div.container {
+    /*border: 1px solid #000;*/
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+    width: 100%;
+}
+
+#collab-banner img {
+    display: none;
+    margin: 2px 0 0 0;
+}
+
+#collab-banner p {
+    /*border: 1px solid yellow;*/
+    display: inline;
+    font-weight: var(--font-weight-light);
+    letter-spacing: 1px;
+    margin: 0 auto;
+    padding: 0;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+#collab-banner p.collab-tech {
+    display: none;
+    text-align: right;
+}
+
+#collab-banner p span.collab-x, #collab-banner p span.collab-divider { opacity: 50%; }
+
+@media screen and (min-width: 500px) {
+    #collab-banner {
+        font-size: 12px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    
+    #collab-banner div.container {
+        justify-content: center;
+    }
+    #collab-banner img {
+        display: block;
+    }
+    #collab-banner p.collab {
+        text-align: left;
+    }
+    #collab-banner p.collab-tech {
+        display: block;
+    }
+    #collab-banner span.collab-lunar, #collab-banner span.collab-divider {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    #collab-banner span.collab-lunar, #collab-banner span.collab-divider {
+        display: inline-block;
+    }
+}
+
+
+/* =HEADER
+-------------------------------------- */
+
+header {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 24px;
+    text-align: left;
+    width: 100%;
+}
+
+header img {
+    
+}
+
+/* =TOP ACTIONS */
+
+#top-actions {
+    margin-bottom: 64px;
+}
+
+@media screen and (min-width: 700px) {
+    header {
+        position: relative;
+    }
+    #top-actions {
+        position: absolute;
+        max-width: 320px;
+        right: 56px;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #top-actions {
+        right: 120px;
+        bottom: 11%;
+        right: 120px;
+        width: 100%;
+    }
+}
+
+/* =MAIN CONTENT
+-------------------------------------- */
+
+main {
+    margin: 0 auto 120px auto;
+    max-width: 1200px;
+    padding: 0 24px;
+    text-align: left;
+    width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+    main {
+        position: relative;
+        top: -32px;
+    } 
+}
+
+/* =ABOUT */
+
+#about { margin-bottom: 80px; }
+
+#about p { max-width: 880px; }
+
+@media screen and (min-width: 700px) {
+    #about div.container {
+        margin: 0 auto;
+        max-width: 900px;
+        /*padding-left: 80px;
+        padding-right: 32px;*/
+    }
+}
+
+/* =CREATORS */
+
+#creators { margin-bottom: 80px; }
+
+#creators li {
+    display: block;
+    height: auto;
+    margin-bottom: 16px;
+    padding: 0;
+}
+
+#creators li a {
+    border: 2px solid #fff;
+    display: block;
+    width: 100%;
+}
+
+@media screen and (min-width: 950px) {
+   #creators div.container ul {
+        /*align-content: flex-start;*/
+        /*align-items: center;*/
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+        /*justify-content: space-between;*/
+        margin: 0 auto;
+        padding: 0;
+        max-width: 950px;
+        width: 100%;
+    }
+    #creators div.container li {
+        display: inline;
+        flex-grow: 1;
+        margin: 0 0 16px 0;
+        max-width: 50%;
+        padding: 0 16px 0 0;
+    }
+}
+
+.creator {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 16px;
+}
+
+.creator-avatar img {
+    border: 2px solid #fff;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.creator-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+@media screen and (min-width: 450px) {
+    .creator {
+        padding: 0;
+    }
+    .creator-avatar img {
+        border-width: 0;
+        border-right: 2px solid #fff;
+    }
+    .creator-info {
+        padding: 0;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #creators div.container {
+        margin: 0 auto;
+        max-width: 900px;
+        /*padding-left: 80px;
+        padding-right: 32px;*/
+    }
+}
+
+/* =BOOKS */
+
+#books { margin-bottom: 120px; }
+
+#books div.container {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+div.book {
+    margin-bottom: 56px;
+    max-width: 880px;
+    text-align: center;
+}
+
+div.book:last-of-type { margin-bottom: 0; }
+
+@media screen and (min-width: 700px) {
+   #books div.container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+    }
+    #books div.container div.book {
+        display: inline;
+        flex-grow: 1;
+        margin: 0 0 32px 0;
+        max-width: 48%;
+        padding: 0;
+        width: 100%;
+    }
+}
+
+/* =BOOK DETAILS */
+
+div.book-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
+    width: 100%;
+}
+
+div.book img.cover {
+    border: 2px solid #fff;
+    margin: 0 auto;
+    width: 186px;
+    height: 286px;
+}
+
+/* book preview – unused for now */
+div.book-cover-preview span {
+    background-color: var(--color-grey-darkest);
+    border: 2px solid #fff;
+    border-top-width: 0;
+    display: none;
+    font-weight: var(--font-weight-bold);
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+div.book-details h3 {margin-bottom: 16px; }
+
+div.book-details p {  }
+
+#books .btn-buy { margin-bottom: 16px; }
+
+.issue-track-name { color: var(--color-grey-light); }
+
+.issue-track-play {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.issue-track-play a { border-width: 0; }
+
+.issue-track-play a:hover, .issue-track-play a:active { color: var(--color-highlight); }
+
+img.btn-icon {
+    display: inline;
+    margin: 0 4px -6px 0;
+}
+
+/* =CUTOUT MOON */
+
+#image-container { text-align: center; }
+
+#image-container img { margin: 0 auto; }
+
+/* =FOOTER
+-------------------------------------- */
+
+footer {
+    background-color: var(--color-highlight);
+    
+    margin: 0 auto;
+    padding: 144px 24px 0 24px;
+    
+    width: 100%;
+}
+
+footer p.byline {
+    margin: 0 auto 48px auto;
+    max-width: 500px;
+}
+
+footer p.copyright {
+    border-bottom: 16px solid #fff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: var(--font-weight-medium);
+    margin: 0;
+    padding-bottom: 16px;
+    text-transform: uppercase;
+}
+
+footer p.byline a { border-bottom-color: #fff; }
+
+footer p.copyright a { border-width-bottom: 0; }
+
+footer p.copyright a:hover, p.copyright footer a:active { color: #fff; }
+
+
+/* =UTILITIES
+-------------------------------------- */
+
+.btn-stack {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-stack li { margin-bottom: 8px; }
+
+.btn-stack li:last-of-type { margin-bottom: 0; }
+
+.btn-stack a {
+    background-color: #fff;
+    border-width: 0;
+    color: #000;
+    display: block;
+    font-size: 14px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    margin: 0;
+    padding: 12px 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.btn-stack a:hover, .btn-stack a:active { color: var(--color-highlight); }
+
+.btn-stack .btn-main a  {
+    background-color: var(--color-highlight);
+    color: #fff;
+}
+
+.btn-stack .btn-main a:hover, .btn-stack .btn-main a:active  { color: #000; }
+
+.btn-stack .btn-preview a  {
+    background-color: #000;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-stack .btn-preview a:hover, .btn-stack .btn-preview a:active  { color: #fff; }
+
+.btn-stack .btn-soon a  {
+    background-color: var(--color-grey-dark);
+    color: #000;
+    cursor: pointer;
+}
+
+.btn-stack .btn-soon a:hover, .btn-stack .btn-soon a:active  {
+    color: #000;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+    .btn-stack a {
+        font-size: 16px;
+    }
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* = RAPPERS */
+
+@media screen and (min-width: 850px) {
+    div.rapper-btns {
+        display: flex;
+        gap: 56px;
+    }
+    div.rapper-btns section {
+        width: 100%;
+    }
+}
+
+/* =UNITS
+-------------------------------------- */
+
+/* =MINOR UNITS */
+
+.minor-unit {
+    margin: 0 auto 96px auto;
+    width: 100%;
+}
+
+.minor-unit p {
+    color: var(--color-grey-light);
+    margin-bottom: 40px;
+}
+
+@media screen and (min-width: 800px) {
+
+}
+
+#collab, #merch, #social {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+}
+
+/* =COLLAB LOGOS */
+
+#collab-logos a { border-width: 0; }
+
+#collab-logos img {
+    margin: 0 auto;
+}
+
+/* =MERCH */
+
+#merch img {
+    margin: 0 auto;
+    width: 90%;
+}
+
+div.img-container { margin-bottom: 16px; }
+
+span.collab-url {
+    color: var(--color-grey-light);
+    display: block;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    padding: 4px 0 16px 0;
+    text-align: center;
+}
+
+span.collab-go {
+    color: var(--color-grey-dark);
+    font-size: 13px;
+}
+
+@media screen and (min-width: 800px) {
+   #collab-logos div.container {
+        align-items: center;
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 950px;
+        width: 100%;
+    }
+    div.img-container { margin-bottom: 0; }
+    div.img-omnibus {
+        position relative;
+    }
+    div.img-omnibus img {
+        position relative;
+        top: 44px;
+    }
+}
+
+/* =PLAYLISTS */
+
+#playlists img { border: 1px solid #fff; }
